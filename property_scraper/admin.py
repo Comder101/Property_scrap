@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import ScrapingLog, CronJobSettings
 
-# Register your models here.
+admin.site.register(ScrapingLog)
+admin.site.register(CronJobSettings)

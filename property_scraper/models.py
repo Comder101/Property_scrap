@@ -8,3 +8,10 @@ class Property(models.Model):
     locality = models.CharField(max_length=255)
     city = models.CharField(max_length=100)
     link = models.URLField(max_length=500)
+
+class CronJobSettings(models.Model):
+    enabled = models.BooleanField(default=True)
+
+class ScrapingLog(models.Model):
+    timestamp = models.DateTimeField(auto_now_add=True)
+    records_scraped = models.PositiveIntegerField()
