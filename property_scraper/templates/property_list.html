@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraped Properties</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scraped Properties</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Property Name</th>
+                <th>Property Cost</th>
+                <th>Property Type</th>
+                <th>Property Area</th>
+                <th>Property Locality</th>
+                <th>Property City</th>
+                <th>Property Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for property in properties %}
+            <tr>
+                <td>{{ property.name }}</td>
+                <td>{{ property.cost }}</td>
+                <td>{{ property.property_type }}</td>
+                <td>{{ property.area }}</td>
+                <td>{{ property.locality }}</td>
+                <td>{{ property.city }}</td>
+                <td><a href="{{ property.link }}" target="_blank">Link</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
